@@ -28,6 +28,7 @@ async function getCountries() {
   });
 }
 
+//creating chart
 const ctx = document.querySelector("#myChart").getContext("2d");
 const chart = new Chart(ctx, {
   // The type of chart we want to create
@@ -95,21 +96,22 @@ async function getRegions(region, param) {
   });
 }
 
+//status buttons click handler
 const checkStatus = (event) => {
   status = event.target.id;
   console.log(status, region);
   getRegions(region, status);
 };
+//Buttons click handler
 const clickHandler = (event) => {
   region = event.target.id;
-
-  // checkStatus();
-
   console.log(region, status);
   getRegions(region, status);
 };
 getCountries();
 getRegions("world", "recovered");
+
+//Event Listeners
 asia.addEventListener("click", clickHandler);
 africa.addEventListener("click", clickHandler);
 europe.addEventListener("click", clickHandler);
@@ -120,6 +122,7 @@ deaths.addEventListener("click", checkStatus);
 recovered.addEventListener("click", checkStatus);
 critical.addEventListener("click", checkStatus);
 
+//Adding data to the chart
 function addData(chart, label, data) {
   chart.data.labels.push(label);
   chart.data.datasets.forEach((dataset) => {
@@ -127,3 +130,4 @@ function addData(chart, label, data) {
   });
   chart.update();
 }
+//I have to add buttons for evrey country
