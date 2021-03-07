@@ -13,6 +13,12 @@
             height: 97vh;
             background: linear-gradient(to top right,#65dfc9,#6cdbeb);
         }
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         #myChart {
             width: 100%;
             height: 100%;
@@ -23,11 +29,47 @@
             height: 400px; 
             background: white;
             display: flex;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .buttonsRegion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            color: white;
+            background: tomato;
+            margin: 5px;
+        }
+        .buttonsRegion button {
+            background: chocolate;
+            color: rgb(219, 215, 215);
+            font-size: larger;
         }
 
-    </style><div id="container"></div>
+    </style>
+    <div id="container"></div>
     <div id="wrapper">
         <canvas id="myChart" height="400" width="700"  ></canvas>
+    </div>
+    <div class="buttons">
+        <button id="confirmed">Confirmed</button>
+        <button id="deaths">Deaths</button>
+        <button id="recovered">Recovered</button>
+        <button id="critical">Critical</button>
+    </div>
+    <div class="buttonsRegion">
+        <button id="asia">Asia</button>
+        <button id="africa">Africa</button>
+        <button id="europe">Europe</button>
+        <button id="americas">Americas</button>
+        <button id="world">World</button>
     </div>
 </div>
 </div>
